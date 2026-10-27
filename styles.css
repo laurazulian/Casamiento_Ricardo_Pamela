@@ -1,0 +1,154 @@
+/* Paleta: rosa empolvado, lavanda suave, gris perla */
+:root{
+  --perla:#EEEDEF;
+  --perla-2:#E3E1E6;
+  --rosa:#E6C9CD;
+  --rosa-deep:#A9707B;
+  --lavanda:#CFC6E0;
+  --lavanda-deep:#6F5F92;
+  --texto:#46424D;
+  --blanco:#FBFAFB;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);font-weight:300;font-size:1.0625rem;line-height:1.6;
+  color:var(--texto);background:var(--perla);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,blockquote,.big,.foot-names{font-family:var(--serif);font-weight:400}
+
+/* Hero: lo memorable es el nombre en tipografía grande sobre un degradé suave */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:3rem 1.5rem;
+  background:
+    radial-gradient(120% 60% at 50% 0%,var(--rosa) 0%,transparent 70%),
+    radial-gradient(100% 50% at 50% 100%,var(--lavanda) 0%,transparent 70%),
+    var(--perla);
+}
+.hero-intro{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--lavanda-deep)}
+.names{display:flex;flex-direction:column;align-items:center;line-height:.95;margin:.75rem 0 1.25rem}
+.names span{font-size:clamp(3.6rem,19vw,6.5rem);letter-spacing:.01em}
+.names .amp{font-style:italic;font-size:clamp(2rem,10vw,3.2rem);color:var(--rosa-deep);margin:.25rem 0}
+.hero-date{font-size:1.1rem;letter-spacing:.08em}
+.countdown{display:flex;gap:.75rem;margin-top:2.25rem}
+.countdown div{
+  min-width:4.1rem;padding:.7rem .4rem;background:rgba(251,250,251,.7);
+  border:1px solid rgba(111,95,146,.2);border-radius:.5rem;
+}
+.countdown strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.9rem;line-height:1.1}
+.countdown small{font-size:.8rem;color:var(--lavanda-deep)}
+
+main{max-width:34rem;margin:0 auto;padding:0 1.25rem}
+
+.verse{padding:4rem .5rem;text-align:center}
+.verse blockquote{font-size:1.55rem;line-height:1.4;font-style:italic}
+.verse cite{display:block;margin-top:1rem;font-family:var(--sans);font-style:normal;font-size:.95rem;color:var(--rosa-deep)}
+
+.card{
+  background:var(--blanco);border-radius:1rem;padding:2rem 1.5rem;margin-bottom:1.5rem;text-align:center;
+  border:1px solid var(--perla-2);
+}
+.card h2{font-size:2rem;margin-bottom:1rem;color:var(--lavanda-deep)}
+.card p+p,.card p+.btn,.card p+form{margin-top:1rem}
+.big{font-size:1.6rem;line-height:1.3;color:var(--texto)}
+
+.notice{
+  margin:1.5rem 0;padding:1.25rem 1.1rem;text-align:left;
+  background:#F6ECEE;border-left:4px solid var(--rosa-deep);border-radius:.5rem;
+}
+.notice h3{font-size:1.35rem;color:var(--rosa-deep);margin-bottom:.5rem}
+.notice ul{padding-left:1.1rem}
+.notice li+li{margin-top:.5rem}
+.notice strong{font-weight:500}
+
+.btn{
+  display:inline-block;min-height:3rem;padding:.8rem 1.75rem;border:1px solid var(--lavanda-deep);
+  border-radius:999px;background:var(--lavanda-deep);color:var(--blanco);
+  font:400 1rem/1.4 var(--sans);text-decoration:none;cursor:pointer;transition:background .2s,color .2s;
+}
+.btn:hover{background:#5b4c7c}
+.btn-ghost{background:transparent;color:var(--lavanda-deep)}
+.btn-ghost:hover{background:var(--lavanda);color:var(--texto)}
+.btn-row{display:flex;flex-direction:column;gap:.75rem;align-items:stretch}
+.btn:focus-visible,.copy:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--rosa-deep);outline-offset:2px;
+}
+
+.bank{margin-top:1.5rem;text-align:left}
+.bank[hidden]{display:none}
+.bank div{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.7rem 0;border-bottom:1px solid var(--perla-2)}
+.bank dt{color:var(--lavanda-deep)}
+.bank dd{display:flex;align-items:center;gap:.5rem;font-weight:400;word-break:break-all;text-align:right}
+.copy{border:1px solid var(--rosa-deep);color:var(--rosa-deep);background:transparent;border-radius:999px;padding:.25rem .8rem;font:400 .85rem var(--sans);cursor:pointer}
+.copy.ok{background:var(--rosa-deep);color:var(--blanco)}
+
+form{text-align:left}
+label,legend{display:block;margin:1.1rem 0 .35rem;font-weight:400}
+input[type=text],select,textarea{
+  width:100%;padding:.75rem .85rem;font:300 1rem var(--sans);color:var(--texto);
+  background:var(--perla);border:1px solid #CFCBD6;border-radius:.5rem;
+}
+fieldset{border:0;padding:0}
+.radio{display:flex;align-items:center;gap:.6rem;margin:.4rem 0;font-weight:300}
+.radio input{width:1.15rem;height:1.15rem;accent-color:var(--lavanda-deep)}
+form .btn{width:100%;margin-top:1.5rem}
+.error{margin-top:1rem;color:#9b3b4b;font-weight:400}
+.hint{font-size:.9rem;text-align:center;color:#7c7784;margin-top:.75rem}
+
+footer{text-align:center;padding:3rem 1.5rem 4rem}
+.foot-names{font-size:2rem;color:var(--rosa-deep);margin-bottom:.5rem}
+
+@media (min-width:640px){
+  body{font-size:1.125rem}
+  .names{flex-direction:row;gap:1.25rem}
+  .btn-row{flex-direction:row;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ===== Flores y animaciones ===== */
+.hero{position:relative;overflow:hidden;padding-block:min(34vw,300px);background:linear-gradient(#F7EFF1,var(--perla) 60%,#E9E6EE)}
+.hero>*:not(.flores){position:relative;z-index:1}
+.flores{
+  position:absolute;left:50%;translate:-50% 0;width:max(130%,640px);max-width:1500px;height:auto;
+  mix-blend-mode:multiply;pointer-events:none;user-select:none;z-index:0;
+}
+.flores-top{top:0;transform-origin:50% 0;animation:entra 1.8s ease-out both,sway 9s ease-in-out 1.8s infinite alternate}
+.flores-bottom{bottom:0;transform-origin:50% 100%;animation:entra 1.8s ease-out .2s both,sway 10s ease-in-out -4s infinite alternate}
+@keyframes entra{from{opacity:0;scale:1.06}to{opacity:1;scale:1}}
+@keyframes sway{from{rotate:-1deg}to{rotate:1deg}}
+
+.divisor{display:flex;justify-content:center;padding:.5rem 0 2rem}
+.flor-mini{width:5.5rem;height:auto;mix-blend-mode:multiply;animation:flota 6s ease-in-out infinite alternate}
+@keyframes flota{from{transform:translateY(-4px) rotate(-4deg)}to{transform:translateY(4px) rotate(4deg)}}
+footer{position:relative;overflow:hidden;padding-bottom:calc(min(34vw,300px) + 1rem)}
+footer>*:not(.flores){position:relative;z-index:1}
+
+/* Entrada de la portada: una sola secuencia al cargar */
+.hero>*:not(.flores){animation:subir .9s ease-out both}
+.hero>.names{animation-delay:.15s}
+.hero>.hero-date{animation-delay:.35s}
+.hero>.countdown{animation-delay:.55s}
+@keyframes subir{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Secciones: solo se ocultan si el JS está activo */
+.js-anim .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js-anim .reveal.in{opacity:1;transform:none}
+
+.btn{transition:background .2s,color .2s,transform .15s}
+.btn:active{transform:scale(.97)}
+
+.gracias{text-align:center;margin-top:1.5rem}
+.gracias p{margin-top:.5rem}
+[hidden]{display:none!important}
+
+@media (prefers-reduced-motion:reduce){
+  .flores,.flor-mini,.hero>*{animation:none!important}
+}
+
+/* Desvanecido en el borde que da hacia el contenido */
+.flores-top{-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent);mask-image:linear-gradient(to bottom,#000 78%,transparent)}
+.flores-bottom{-webkit-mask-image:linear-gradient(to top,#000 78%,transparent);mask-image:linear-gradient(to top,#000 78%,transparent)}

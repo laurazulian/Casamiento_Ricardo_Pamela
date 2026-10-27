@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ricardo & Pamela · 19 de diciembre</title>
+  <meta name="description" content="Nos casamos. Te esperamos el 19 de diciembre a las 20:00 hs en Salón Viaurelia.">
+  <meta name="theme-color" content="#EEEDEF">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<header class="hero">
+  <img class="flores flores-top" src="img/flores-arriba.webp" width="1300" height="360" alt="">
+  <img class="flores flores-bottom" src="img/flores-abajo.webp" width="1300" height="345" alt="">
+  <p class="hero-intro">Nos casamos</p>
+  <h1 class="names"><span>Ricardo</span><span class="amp">&</span><span>Pamela</span></h1>
+  <p class="hero-date">19 de diciembre · 20:00 hs</p>
+  <div class="countdown" id="countdown" aria-live="off">
+    <div><strong id="cd-d">00</strong><small>días</small></div>
+    <div><strong id="cd-h">00</strong><small>horas</small></div>
+    <div><strong id="cd-m">00</strong><small>min</small></div>
+    <div><strong id="cd-s">00</strong><small>seg</small></div>
+  </div>
+</header>
+
+<main>
+  <section class="verse">
+    <blockquote>
+      “Como ya no son dos sino uno, que nadie separe lo que Dios ha unido.”
+      <cite>Mateo 19:6</cite>
+    </blockquote>
+  </section>
+
+<div class="divisor" aria-hidden="true"><img class="flor-mini" src="img/flor.webp" width="360" height="353" alt="" loading="lazy"></div>
+  <section class="card reveal" id="lugar">
+    <h2>El lugar</h2>
+    <p class="big">Sábado 19 de diciembre<br>20:00 hs puntual</p>
+    <p>Salón Viaurelia<br>Calle Cerro Aconcagua</p>
+
+    <div class="notice" role="note">
+      <h3>Cómo llegar</h3>
+      <ul>
+        <li><strong>La entrada es por calle Las Leñas</strong>, donde está el cartel de <strong>Santa Elena</strong>.</li>
+        <li>El mapa puede indicarte otra entrada antes, pero esa calle está cortada y bloqueada. No la tomes.</li>
+        <li>El predio tiene dos salones: la fiesta es en <strong>el salón de atrás</strong>.</li>
+      </ul>
+    </div>
+
+    <a class="btn" href="https://maps.app.goo.gl/2tn3uaZNBMukumnV7" target="_blank" rel="noopener">Abrir en el mapa</a>
+  </section>
+
+  <section class="card reveal" id="regalo">
+    <h2>Regalo</h2>
+    <p>Lo más importante es tu presencia. Si además querés hacernos un regalo, podés colaborar con nuestro nuevo hogar.</p>
+    <button class="btn btn-ghost" id="toggle-bank" aria-expanded="false" aria-controls="bank">Ver datos bancarios</button>
+    <dl class="bank" id="bank" hidden>
+      <div><dt>Titular</dt><dd>Ricardo</dd></div>
+      <div><dt>Alias</dt><dd><span data-copy>ricardo.zulian.mp</span><button class="copy" type="button">Copiar</button></dd></div>
+      <div><dt>CVU</dt><dd><span data-copy>0000003100006426478340</span><button class="copy" type="button">Copiar</button></dd></div>
+      <div><dt>DNI</dt><dd><span data-copy>31273862</span><button class="copy" type="button">Copiar</button></dd></div>
+      <div><dt>Banco</dt><dd>Mercado Pago</dd></div>
+    </dl>
+  </section>
+
+  <section class="card reveal" id="rsvp">
+    <h2>Confirmá tu asistencia</h2>
+    <p>Confirmanos hasta el <strong>22 de noviembre</strong>.</p>
+    <form id="rsvp-form" novalidate>
+      <label for="nombre">Nombre y apellido</label>
+      <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+
+      <fieldset>
+        <legend>¿Vas a venir?</legend>
+        <label class="radio"><input type="radio" name="asiste" value="Sí" checked> Sí, voy</label>
+        <label class="radio"><input type="radio" name="asiste" value="No"> No puedo ir</label>
+      </fieldset>
+
+      <div id="extra">
+        <label for="cantidad">Cantidad de personas</label>
+        <select id="cantidad" name="cantidad">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+
+        <label for="comida">¿Tenés alguna restricción alimentaria?</label>
+        <textarea id="comida" name="comida" rows="3" placeholder="Celiaquía, vegetariano, alergias… o escribí “ninguna”"></textarea>
+      </div>
+
+      <p class="error" id="form-error" role="alert" hidden></p>
+      <button class="btn" id="send" type="submit">Enviar confirmación</button>
+      <p class="hint" id="rsvp-note">Tu respuesta les llega directo a Ricardo y Pamela.</p>
+    </form>
+    <div class="gracias" id="rsvp-ok" role="status" hidden>
+      <img class="flor-mini" src="img/flor.webp" width="360" height="353" alt="">
+      <p class="big">¡Gracias por confirmar!</p>
+      <p>Recibimos tu respuesta. ¡Nos vemos el 19 de diciembre!</p>
+    </div>
+  </section>
+
+  <section class="card reveal" id="agenda">
+    <h2>Agendá la fecha</h2>
+    <div class="btn-row">
+      <a class="btn btn-ghost" id="gcal" href="#" target="_blank" rel="noopener">Google Calendar</a>
+      <a class="btn btn-ghost" id="ics" href="#">Apple / Outlook</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img class="flores flores-bottom" src="img/flores-abajo.webp" width="1300" height="345" alt="" loading="lazy">
+  <p class="foot-names">Ricardo & Pamela</p>
+  <p>¡Gracias por acompañarnos en este momento tan importante!</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
